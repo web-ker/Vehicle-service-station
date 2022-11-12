@@ -1,0 +1,21 @@
+<?php 
+include('db.php'); 
+$registration_id=$_POST['registration_id'];
+$first_name=$_POST['first_name'];
+$last_name=$_POST['last_name'];
+$dob=$_POST['dob'];
+$mobile_no=$_POST['mobile_no'];
+$city=$_POST['city'];
+$state=$_POST['state'];
+$email_id=$_POST['email_id'];
+$hintq=$_POST['hintq'];
+$hinta=$_POST['hinta'];
+$password=$_POST['password'];
+$confirm_password=$_POST['confirm_password'];
+$sql="update  registration set first_name='$first_name',last_name='$last_name',dob='$dob',mobile_no='$mobile_no',city='$city',state='$state',email_id='$email_id',hintq='$hintq',hinta='$hinta',password='$password',confirm_password='$confirm_password' where registration_id='$registration_id' ";
+mysql_query($sql);
+?>
+<script>
+alert("updated..");
+document.location="registration_view.php";
+</script>

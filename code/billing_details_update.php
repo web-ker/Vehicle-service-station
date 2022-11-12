@@ -1,0 +1,19 @@
+<?php
+include('db.php');
+$billing_id=$_POST['b_id'];
+$service_id=$_POST['service_id'];
+$item_id=$_POST['item_id'];
+$jobcard_id=$_POST['jobcard_id'];
+$service_date=$_POST['service_date'];
+$service_description=$_POST['service_description'];
+$total_amt=$_POST['total_amt'];
+$payment_status=$_POST['payment_status'];
+$cgst=$_POST['cgst'];
+$sgst=$_POST['sgst'];
+$sql="update  billing_details set service_id='$service_id',item_id='$item_id',jobcard_id='$jobcard_id',service_date='$service_date',service_description='$service_description',total_amt='$total_amt',payment_status='$payment_status',cgst='$cgst',sgst='$sgst' where bill_id='$billing_id' ";
+mysql_query($sql);
+?>
+<script>
+alert("updated..");
+document.location="billing_details_view.php";
+</script>
